@@ -4,6 +4,7 @@ function onSaveBtn() {
     if (text != '') {
         // Save to local storage
         addMemo(text);
+        ncmbController.sendText(text);
         // Clear form
         $("#Memo").val("");
         // Initialize top page
@@ -33,6 +34,7 @@ function initTopPage() {
         $("#TopListView").prepend($li);
     }
     $("#TopListView").listview("refresh");  // Call refresh after manipulating list
+    ncmbController.init();
 }
 
 ///// Move to detail page
