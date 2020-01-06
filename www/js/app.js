@@ -15,26 +15,8 @@ function onSaveBtn() {
 
 ///// Initialize top page
 function initTopPage() {
-    $("#TopListView").empty();
-    
-    var list = getMemoList();
-    for (var i in list) {
-        var memo = list[i];
-        var d = new Date(memo.time);
-        var date = d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate();
-        
-        $li = $("<li><a href='#' class='show'><h3></h3><p></p></a><a href='#' class='delete'>Delete</a></li>");
-        $li.data("id", memo.id);
-        $li.find("h3").text(date);
-        $li.find("p").text(memo.text);
-        $("#TopListView").prepend($li);
-    }
-    if (list.length == 0) {
-        $li = $("<li>No memo found</li>");
-        $("#TopListView").prepend($li);
-    }
-    $("#TopListView").listview("refresh");  // Call refresh after manipulating list
     ncmbController.init();
+    ncmbController.showList();
 }
 
 ///// Move to detail page
