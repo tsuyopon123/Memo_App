@@ -23,6 +23,7 @@ var ncmbController = {
     TextData.save()
       .then(function (saved) {
         alert("Text送信完了！");
+        initTopPage();
       })
       .catch(function (err) {
         console.log(err);
