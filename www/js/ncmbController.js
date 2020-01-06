@@ -29,6 +29,21 @@ var ncmbController = {
       });
   },
 
+  deleteText: function (id) {
+    var self = this;
+    var Text = self.ncmb.DataStore("Memo");
+    var TextId = new Text({ objectId: id});
+
+    TextId.delete()
+      .then(function () {
+        alert("削除しました");
+        initTopPage();
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+  },
+
   showList: function () {
     var self = this;
 

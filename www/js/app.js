@@ -37,9 +37,7 @@ function onDeleteLink() {
     }
     var $li = $(this).parent();
     var id = $li.data("id");
-    deleteMemo(id);
-    
-    initTopPage();
+    ncmbController.deleteText(id);
     
     // Return to top
     $.mobile.changePage("#TopPage", { reverse: true });
